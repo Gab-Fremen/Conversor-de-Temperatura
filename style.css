@@ -1,0 +1,84 @@
+body {
+    margin: 0px;
+    background-color: oklch(28.6% 0.016 107.4);
+    font-family: sans-serif;
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+
+header {
+
+    padding: 10px;
+    background-color: oklch(22.8% 0.013 107.4);
+}
+
+
+
+h2 {
+
+    color: oklch(98.8% 0.003 106.5);
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+}
+
+
+#Conversor {
+
+
+
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+
+}
+
+
+#result {
+
+    color: oklch(98.8% 0.003 106.5);
+    font-size: 20px;
+    
+}
+
+
+#ResultBox {
+
+    border: 1px red solid;
+    display: block;
+
+}
+
+
+.btn {
+
+    background-color: oklch(94.1% 0.03 12.58);
+    border-radius: 6px;
+    border: none;
+    font-size: 20px;
+    margin: 5px;
+    height: 40px;
+    width: 100px;
+    transition: transform 0.2s ease;
+    
+
+
+}
+
+.active {
+
+    transform: scale(0.90);    
+    background-color: bisque;
+}
+
+.blocked {
+
+    background-color: rgb(82, 82, 82);
+
+}
