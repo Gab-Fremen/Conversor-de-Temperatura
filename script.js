@@ -25,7 +25,7 @@ function EnableButton(button) {
 
 }
 
-function SecondClickIn(buttonIn, buttonOut) {
+function SecondClick(buttonIn, buttonOut) {
     if (buttonIn.classList.contains("active")) {
         buttonIn.classList.remove("active")
         EnableButton(buttonOut)
@@ -50,6 +50,7 @@ function AddOrRemoveClickIn(button) {
     else if (button === btFarenheitIn) {
         btCelsiusIn.classList.remove("active")
         btKelvinIn.classList.remove("active")
+        btFarenheitOut.classList.remove("active")
         EnableButton(btCelsiusOut)
         EnableButton(btKelvinOut)
         BlockButton(btFarenheitOut)
@@ -57,6 +58,7 @@ function AddOrRemoveClickIn(button) {
     else {
         btCelsiusIn.classList.remove("active")
         btFarenheitIn.classList.remove("active")
+        btKelvinOut.classList.remove("active")
         EnableButton(btFarenheitOut)
         EnableButton(btCelsiusOut)
         BlockButton(btKelvinOut)
@@ -66,7 +68,7 @@ function AddOrRemoveClickIn(button) {
 function AddOrRemoveClickOut(button) {
     button.classList.add("active")
 
-     if (button === btCelsiusOut) {
+    if (button === btCelsiusOut) {
         btFarenheitOut.classList.remove("active")
         btKelvinOut.classList.remove("active")
     }
@@ -77,19 +79,23 @@ function AddOrRemoveClickOut(button) {
     else {
         btCelsiusOut.classList.remove("active")
         btFarenheitOut.classList.remove("active")
-
     } 
+}
 
-
-
+function FirstClickOut(button) {
+    if (button.classList.contains("active")) {
+        return true
+    }
+    else {
+        return false
+    }
 }
 
 
 
 
-
 btCelsiusIn.onclick = function InCelsius(){
-    if (SecondClickIn(btCelsiusIn, btCelsiusOut)) {
+    if (SecondClick(btCelsiusIn, btCelsiusOut)) {
         return;
     }
     IdTemp = 1
@@ -98,7 +104,7 @@ btCelsiusIn.onclick = function InCelsius(){
 }
 
 btFarenheitIn.onclick = function InFarenheit(){
-    if (SecondClickIn(btFarenheitIn, btFarenheitOut)) {
+    if (SecondClick(btFarenheitIn, btFarenheitOut)) {
         return;
     }
     IdTemp = 2
@@ -106,7 +112,7 @@ btFarenheitIn.onclick = function InFarenheit(){
 }
 
 btKelvinIn.onclick = function InKelvin(){
-     if (SecondClickIn(btKelvinIn, btKelvinOut)) {
+     if (SecondClick(btKelvinIn, btKelvinOut)) {
         return;
     }
     IdTemp = 3
@@ -114,6 +120,9 @@ btKelvinIn.onclick = function InKelvin(){
 }
 
 btCelsiusOut.onclick = function Celsius(){
+    if (SecondClick(btCelsiusOut)) {
+        return;
+    }
     AddOrRemoveClickOut(btCelsiusOut)
     var entrada = Input()
     if (IdTemp === 2){
@@ -128,6 +137,7 @@ btCelsiusOut.onclick = function Celsius(){
 }
 
 btFarenheitOut.onclick = function Farenheit(){
+    if ((FirstClickOut(btFarenheitIn)) || (FirstClickOut(btCelsiusIn)) || (FirstClickOut(btKelvinIn))) { 
     AddOrRemoveClickOut(btFarenheitOut)
     var entrada = Input()
     if (IdTemp === 1){
@@ -136,12 +146,16 @@ btFarenheitOut.onclick = function Farenheit(){
     else if (IdTemp === 3){
         resultado.innerHTML = ConvertKelvinToFarenheit(entrada)
     }
+    }
     else{
         resultado.innerHTML = ("Defina a temperatura inicial")
     }
 }
 
 btKelvinOut.onclick = function Kelvin(){
+    if (SecondClick(btKelvinOut)) {
+        return;
+    }
     AddOrRemoveClickOut(btKelvinOut)
     var entrada = Input()
     if (IdTemp === 2){
