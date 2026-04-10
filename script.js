@@ -120,6 +120,7 @@ btKelvinIn.onclick = function InKelvin(){
 }
 
 btCelsiusOut.onclick = function Celsius(){
+    if ((FirstClickOut(btFarenheitIn)) || (FirstClickOut(btCelsiusIn)) || (FirstClickOut(btKelvinIn))) { 
     if (SecondClick(btCelsiusOut)) {
         return;
     }
@@ -130,6 +131,10 @@ btCelsiusOut.onclick = function Celsius(){
     }
     else if (IdTemp === 3){
         resultado.innerHTML = ConvertKelvinToCelsius(entrada)
+    }
+    else{
+        resultado.innerHTML = ("Defina a temperatura inicial")
+    }
     }
     else{
         resultado.innerHTML = ("Defina a temperatura inicial")
@@ -153,6 +158,7 @@ btFarenheitOut.onclick = function Farenheit(){
 }
 
 btKelvinOut.onclick = function Kelvin(){
+    if ((FirstClickOut(btFarenheitIn)) || (FirstClickOut(btCelsiusIn)) || (FirstClickOut(btKelvinIn))) { 
     if (SecondClick(btKelvinOut)) {
         return;
     }
@@ -163,6 +169,10 @@ btKelvinOut.onclick = function Kelvin(){
     }
     else if (IdTemp === 1){
         resultado.innerHTML = ConvertCelsiusToKelvin(entrada)
+    }
+    else{
+        resultado.innerHTML = ("Defina a temperatura inicial")
+    }
     }
     else{
         resultado.innerHTML = ("Defina a temperatura inicial")
