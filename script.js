@@ -8,6 +8,7 @@ const btCelsiusOut = document.getElementById("toCelsius")
 const btFarenheitOut = document.getElementById("toFarenheit")
 const btKelvinOut = document.getElementById("toKelvin")
 
+
 function Input() {
     var input = document.getElementById("writeTemp")
     input = Number(input.value)
@@ -25,11 +26,14 @@ function EnableButton(button) {
 
 }
 
+
 function SecondClick(buttonIn, buttonOut) {
     if (buttonIn.classList.contains("active")) {
         buttonIn.classList.remove("active")
+        btCelsiusOut.classList.remove("active")
+        btFarenheitOut.classList.remove("active")
+        btKelvinOut.classList.remove("active")
         EnableButton(buttonOut)
-
         IdTemp = 0
         return true;
     }
@@ -43,6 +47,8 @@ function AddOrRemoveClickIn(button) {
         btFarenheitIn.classList.remove("active")
         btKelvinIn.classList.remove("active")
         btCelsiusOut.classList.remove("active")
+        btFarenheitOut.classList.remove("active")
+        btKelvinOut.classList.remove("active")
         EnableButton(btFarenheitOut)
         EnableButton(btKelvinOut)
         BlockButton(btCelsiusOut)
@@ -51,6 +57,8 @@ function AddOrRemoveClickIn(button) {
         btCelsiusIn.classList.remove("active")
         btKelvinIn.classList.remove("active")
         btFarenheitOut.classList.remove("active")
+        btCelsiusOut.classList.remove("active")
+        btKelvinOut.classList.remove("active")
         EnableButton(btCelsiusOut)
         EnableButton(btKelvinOut)
         BlockButton(btFarenheitOut)
@@ -59,6 +67,8 @@ function AddOrRemoveClickIn(button) {
         btCelsiusIn.classList.remove("active")
         btFarenheitIn.classList.remove("active")
         btKelvinOut.classList.remove("active")
+        btFarenheitOut.classList.remove("active")
+        btCelsiusOut.classList.remove("active")
         EnableButton(btFarenheitOut)
         EnableButton(btCelsiusOut)
         BlockButton(btKelvinOut)
@@ -121,9 +131,6 @@ btKelvinIn.onclick = function InKelvin(){
 
 btCelsiusOut.onclick = function Celsius(){
     if ((FirstClickOut(btFarenheitIn)) || (FirstClickOut(btCelsiusIn)) || (FirstClickOut(btKelvinIn))) { 
-    if (SecondClick(btCelsiusOut)) {
-        return;
-    }
     AddOrRemoveClickOut(btCelsiusOut)
     var entrada = Input()
     if (IdTemp === 2){
@@ -159,9 +166,6 @@ btFarenheitOut.onclick = function Farenheit(){
 
 btKelvinOut.onclick = function Kelvin(){
     if ((FirstClickOut(btFarenheitIn)) || (FirstClickOut(btCelsiusIn)) || (FirstClickOut(btKelvinIn))) { 
-    if (SecondClick(btKelvinOut)) {
-        return;
-    }
     AddOrRemoveClickOut(btKelvinOut)
     var entrada = Input()
     if (IdTemp === 2){
