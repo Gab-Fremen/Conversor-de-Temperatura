@@ -9,7 +9,6 @@ body {
 
 
 header {
-
     padding: 10px;
     background-color: oklch(22.8% 0.013 107.4);
 }
@@ -17,34 +16,24 @@ header {
 
 
 h2 {
-
     color: oklch(98.8% 0.003 106.5);
     font-size: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-
-
-
 }
 
 
 #Conversor {
-
-
-
     display: flex;
     justify-content: center;
     justify-content: space-between;
-
 }
 
 
 #result {
-
     color: oklch(98.8% 0.003 106.5);
     font-size: 20px;
-    
 }
 
 

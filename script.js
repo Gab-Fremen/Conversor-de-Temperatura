@@ -185,33 +185,33 @@ btKelvinOut.onclick = function Kelvin(){
 
 function ConvertFarenheitToCelsius(tempFarenheit){
     var tempCelsius = (tempFarenheit - 32) * 5/9 
-    return tempCelsius
+    return tempCelsius.toFixed(2)
 }
 
 function ConvertFarenheitToKelvin(tempFarenheit){
     var tempKelvin = (tempFarenheit - 32) * 5/9 + 273.15
-    return tempKelvin
+    return tempKelvin.toFixed(2)
 }
 
 function ConvertCelsiusToFarenheit(tempCelsius){
     var tempFarenheit = (tempCelsius * 9/5 + 32)
-    return tempFarenheit
+    return tempFarenheit.toFixed(2)
 }
 
 
 function ConvertCelsiusToKelvin(tempCelsius){
     var tempKelvin = (tempCelsius + 273.15)
-    return tempKelvin
+    return tempKelvin.toFixed(2)
 }
 
 function ConvertKelvinToCelsius(tempKelvin){
     var tempCelsius = (tempKelvin - 273.15)
-    return tempCelsius
+    return tempCelsius.toFixed(2)
 }
 
 function ConvertKelvinToFarenheit(tempKelvin){
     var tempFarenheit = (tempKelvin - 273.15) * 9/5 + 32
-    return tempFarenheit
+    return tempFarenheit.toFixed(2)
 }
 
 
