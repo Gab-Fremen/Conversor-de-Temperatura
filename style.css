@@ -11,6 +11,9 @@ body {
 header {
     padding: 10px;
     background-color: oklch(22.8% 0.013 107.4);
+    border: solid 1px oklch(98.8% 0.003 106.5);
+    border-radius: 6px;
+
 }
 
 
@@ -25,20 +28,35 @@ h2 {
 
 
 #Conversor {
-    display: flex;
-    justify-content: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 100px;
+    margin-top: 50px;
 }
 
 
 #result {
     color: oklch(98.8% 0.003 106.5);
-    font-size: 20px;
+    font-size: 40px;
 }
 
 
 #ResultBox {
-    display: block;
+    border: solid 1px oklch(98.8% 0.003 106.5);
+    background-color: oklch(22.8% 0.013 107.4);
+    border-radius: 6px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ButtonConteiner {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 10px;
+
 }
 
 
@@ -48,13 +66,9 @@ h2 {
     border-radius: 6px;
     border: none;
     font-size: 20px;
-    margin: 5px;
-    height: 40px;
-    width: 100px;
+    height: 50px;
+    width: 120px;
     transition: transform 0.2s ease;
-    
-
-
 }
 
 .active {
@@ -66,14 +80,20 @@ h2 {
 .blocked {
 
     background-color: rgb(82, 82, 82);
-
 }
 
 #writeTemp{
-    width: 40%;
-    height: 40%;
-    font-size: 300%;
+    height: 100%;
+    font-size: 40px;
     appearance: textfield;
+    border-radius: 6px;
+    text-align: center;
+    background-color: oklch(22.8% 0.013 107.4);
+    color: oklch(98.8% 0.003 106.5);
+    display: block;
+    border: solid 1px;
+    width: 100%;
+    margin: -1px;
 }
 
 ::-webkit-inner-spin-button,
@@ -81,3 +101,4 @@ h2 {
     -webkit-appearance: none;
     margin: 0;
 }
+

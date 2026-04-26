@@ -34,6 +34,7 @@ function SecondClick(buttonIn, buttonOut) {
         btFarenheitOut.classList.remove("active")
         btKelvinOut.classList.remove("active")
         EnableButton(buttonOut)
+        resultado.innerHTML = "Resultados:"
         IdTemp = 0
         return true;
     }
@@ -42,6 +43,8 @@ function SecondClick(buttonIn, buttonOut) {
 
 function AddOrRemoveClickIn(button) {
     button.classList.add("active")
+    resultado.innerHTML = "Resultados:"
+
 
     if (button === btCelsiusIn) {
         btFarenheitIn.classList.remove("active")
