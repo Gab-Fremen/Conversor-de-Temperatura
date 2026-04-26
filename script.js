@@ -1,6 +1,6 @@
 
 var IdTemp = 0
-var resultado = document.getElementById("result")
+var result = document.getElementById("result")
 const btCelsiusIn = document.getElementById("fromCelsius")
 const btFarenheitIn = document.getElementById("fromFarenheit")
 const btKelvinIn = document.getElementById("fromKelvin")
@@ -34,7 +34,7 @@ function SecondClick(buttonIn, buttonOut) {
         btFarenheitOut.classList.remove("active")
         btKelvinOut.classList.remove("active")
         EnableButton(buttonOut)
-        resultado.innerHTML = "Resultados:"
+        result.innerHTML = "Results:"
         IdTemp = 0
         return true;
     }
@@ -43,7 +43,7 @@ function SecondClick(buttonIn, buttonOut) {
 
 function AddOrRemoveClickIn(button) {
     button.classList.add("active")
-    resultado.innerHTML = "Resultados:"
+    result.innerHTML = "Results:"
 
 
     if (button === btCelsiusIn) {
@@ -135,54 +135,54 @@ btKelvinIn.onclick = function InKelvin(){
 btCelsiusOut.onclick = function Celsius(){
     if ((FirstClickOut(btFarenheitIn)) || (FirstClickOut(btCelsiusIn)) || (FirstClickOut(btKelvinIn))) { 
     AddOrRemoveClickOut(btCelsiusOut)
-    var entrada = Input()
+    var entry = Input()
     if (IdTemp === 2){
-        resultado.innerHTML = (ConvertFarenheitToCelsius(entrada))
+        result.innerHTML = (ConvertFarenheitToCelsius(entry))
     }
     else if (IdTemp === 3){
-        resultado.innerHTML = ConvertKelvinToCelsius(entrada)
+        result.innerHTML = ConvertKelvinToCelsius(entry)
     }
     else{
-        resultado.innerHTML = ("Defina a temperatura inicial")
+        result.innerHTML = ("Define the initial temperature")
     }
     }
     else{
-        resultado.innerHTML = ("Defina a temperatura inicial")
+        result.innerHTML = ("Define the initial temperature")
     }
 }
 
 btFarenheitOut.onclick = function Farenheit(){
     if ((FirstClickOut(btFarenheitIn)) || (FirstClickOut(btCelsiusIn)) || (FirstClickOut(btKelvinIn))) { 
     AddOrRemoveClickOut(btFarenheitOut)
-    var entrada = Input()
+    var entry = Input()
     if (IdTemp === 1){
-        resultado.innerHTML = ConvertCelsiusToFarenheit(entrada)
+        result.innerHTML = ConvertCelsiusToFarenheit(entry)
     }
     else if (IdTemp === 3){
-        resultado.innerHTML = ConvertKelvinToFarenheit(entrada)
+        result.innerHTML = ConvertKelvinToFarenheit(entry)
     }
     }
     else{
-        resultado.innerHTML = ("Defina a temperatura inicial")
+        result.innerHTML = ("Define the initial temperature")
     }
 }
 
 btKelvinOut.onclick = function Kelvin(){
     if ((FirstClickOut(btFarenheitIn)) || (FirstClickOut(btCelsiusIn)) || (FirstClickOut(btKelvinIn))) { 
     AddOrRemoveClickOut(btKelvinOut)
-    var entrada = Input()
+    var entry = Input()
     if (IdTemp === 2){
-        resultado.innerHTML = ConvertFarenheitToKelvin(entrada)
+        result.innerHTML = ConvertFarenheitToKelvin(entry)
     }
     else if (IdTemp === 1){
-        resultado.innerHTML = ConvertCelsiusToKelvin(entrada)
+        result.innerHTML = ConvertCelsiusToKelvin(entry)
     }
     else{
-        resultado.innerHTML = ("Defina a temperatura inicial")
+        result.innerHTML = ("Define the initial temperature")
     }
     }
     else{
-        resultado.innerHTML = ("Defina a temperatura inicial")
+        result.innerHTML = ("Define the initial temperature")
     }
 }
 
